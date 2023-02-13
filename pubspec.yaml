@@ -38,8 +38,16 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  bloc: 8.1.1
   flutter_test:
     sdk: flutter
+  flutter_bloc: 8.1.2
+  http: 0.13.5
+  flutter_svg: 1.1.6
+  flutter_animate: 3.1.0
+  hydrated_bloc: 9.0.0
+  path_provider: 2.0.11
+  json_annotation: 4.8.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

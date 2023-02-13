@@ -1,6 +1,8 @@
+import 'package:as_pmr/common/theme/colors.dart';
+import 'package:as_pmr/navigation/navigation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+main() {
   runApp(const MyApp());
 }
 
@@ -10,57 +12,32 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'GorodPay Demo',
+      onGenerateRoute: AppRoutes.getRouteBuilder,
+      navigatorObservers: [NavigationHistoryObserver()],
+      navigatorKey: navigatorKey,
       theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.transparent,
+          foregroundColor: AppColors.azure,
+          elevation: 0,
+          titleSpacing: 0,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        primarySwatch: MaterialColor(
+          AppColors.azure.value,
+          {
+            50: AppColors.azure.withOpacity(.1),
+            100: AppColors.azure.withOpacity(.2),
+            200: AppColors.azure.withOpacity(.3),
+            300: AppColors.azure.withOpacity(.4),
+            400: AppColors.azure.withOpacity(.5),
+            500: AppColors.azure.withOpacity(.6),
+            600: AppColors.azure.withOpacity(.7),
+            700: AppColors.azure.withOpacity(.8),
+            800: AppColors.azure.withOpacity(.9),
+            900: AppColors.azure.withOpacity(1),
+          },
+        ),
       ),
     );
   }
