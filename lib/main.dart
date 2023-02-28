@@ -17,26 +17,11 @@ class MyApp extends StatelessWidget {
       navigatorObservers: [NavigationHistoryObserver()],
       navigatorKey: navigatorKey,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.transparent,
-          foregroundColor: AppColors.azure,
+          foregroundColor: AppColors.transparent,
           elevation: 0,
           titleSpacing: 0,
-        ),
-        primarySwatch: MaterialColor(
-          AppColors.azure.value,
-          {
-            50: AppColors.azure.withOpacity(.1),
-            100: AppColors.azure.withOpacity(.2),
-            200: AppColors.azure.withOpacity(.3),
-            300: AppColors.azure.withOpacity(.4),
-            400: AppColors.azure.withOpacity(.5),
-            500: AppColors.azure.withOpacity(.6),
-            600: AppColors.azure.withOpacity(.7),
-            700: AppColors.azure.withOpacity(.8),
-            800: AppColors.azure.withOpacity(.9),
-            900: AppColors.azure.withOpacity(1),
-          },
         ),
       ),
     );
